@@ -7,6 +7,9 @@ destination = "output"
 count_success = 0
 count_failure = 0
 
+if not os.path.isdir("output"):
+    os.mkdir("output")
+
 for root, directories, files in os.walk(source):
     for item in files:
         if ".woff2" in item and root == source:
